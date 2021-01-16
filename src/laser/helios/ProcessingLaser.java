@@ -1,6 +1,8 @@
-package template.library;
+package laser.helios;
 
 
+import laser.helios.jnihelios.HeliosPoint;
+import laser.helios.jnihelios.JNIHelios;
 import processing.core.*;
 
 /**
@@ -14,15 +16,17 @@ import processing.core.*;
  * @example Hello 
  */
 
-public class HelloLibrary {
-	
+public class ProcessingLaser {
+
 	// myParent is a reference to the parent sketch
 	PApplet myParent;
+	JNIHelios helios;
+	//	HeliosPoint p;
 
 	int myVariable = 0;
-	
+
 	public final static String VERSION = "##library.prettyVersion##";
-	
+
 
 	/**
 	 * a Constructor, usually called in the setup() method in your sketch to
@@ -31,17 +35,28 @@ public class HelloLibrary {
 	 * @example Hello
 	 * @param theParent the parent PApplet
 	 */
-	public HelloLibrary(PApplet theParent) {
+	public ProcessingLaser(PApplet theParent) {
 		myParent = theParent;
 		welcome();
+		//		p = new HeliosPoint();
+		helios = new JNIHelios();
 	}
-	
-	
+
+
 	private void welcome() {
 		System.out.println("##library.name## ##library.prettyVersion## by ##author##");
 	}
+
+	public void testLaser() {
+		System.out.println("testing laser");
+		helios.testLaser();
+	}
 	
-	
+	public void stopLaser() {
+		System.out.println("stopping laser");
+		helios.stop();
+	}
+
 	public String sayHello() {
 		return "hello library.";
 	}
