@@ -3,3 +3,4 @@ tmp
 distribution
 .class
 .o
+.DS_Store
