@@ -7,8 +7,11 @@ javac ./$dir/JNIHelios.java
 javac -h ./$dir ./$dir/JNIHelios.java
 
 
-g++ -I"$JAVA_HOME/include" -std=c++14 -I"$JAVA_HOME/include/darwin/" $dir/HeliosDac.cpp $dir/laser_helios_jnihelios_JNIHelios.cpp -o $dir/libjnihelios.jnilib $dir/libusb-1.0.0.dylib
+g++ -I"$JAVA_HOME/include" -std=c++14 -I"$JAVA_HOME/include/darwin/" $dir/HeliosDac.cpp $dir/laser_helios_jnihelios_JNIHelios.cpp -o $dir/libjnihelios.dylib $dir/libusb-1.0.0.dylib
 
+
+libjnihelios.jnilib
+libhello.dylib
  
 java -Djava.library.path=./$dir ./$dir/JNIHelios.java
 
